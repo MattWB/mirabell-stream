@@ -1,0 +1,147 @@
+import type { Video } from "../types/video";
+
+export const videos: Video[] = [
+  {
+    id: 1,
+    title: "Les Derniers Gardiens de l'Amazonie",
+    category: "Nature",
+    durationMinutes: 88,
+    releaseYear: 2024,
+    views: 284_700,
+    thumbnailPath: "media/images/videos/amazon-guardians-960.webp",
+    backdropPath: "media/images/hero/amazon-guardians-hero.webp",
+    description:
+      "À l'intérieur de la plus grande forêt tropicale du monde, des communautés autochtones mènent un combat silencieux pour préserver leur territoire et notre avenir commun.",
+    badge: "Nouveau",
+    progress: 45,
+    rating: 9.2,
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "IA : Le Nouveau Monde",
+    category: "Technologie",
+    durationMinutes: 58,
+    releaseYear: 2024,
+    views: 412_300,
+    thumbnailPath: "media/images/videos/ia-new-world-960.webp",
+    description:
+      "Comment l'intelligence artificielle remodèle-t-elle nos sociétés, nos économies et notre rapport au travail ? Une enquête immersive au cœur de la révolution algorithmique.",
+    badge: "Tendance",
+  },
+  {
+    id: 3,
+    title: "Mémoire de Marbre",
+    category: "Culture",
+    durationMinutes: 72,
+    releaseYear: 2023,
+    views: 189_400,
+    thumbnailPath: "media/images/videos/marble-memory-960.webp",
+    description:
+      "Un voyage entre les grandes capitales européennes à la rencontre des sculptures qui ont façonné notre imaginaire culturel depuis l'Antiquité.",
+    progress: 78,
+  },
+  {
+    id: 4,
+    title: "Profonds Abysses",
+    category: "Science",
+    durationMinutes: 65,
+    releaseYear: 2023,
+    views: 231_600,
+    thumbnailPath: "media/images/videos/deep-abyss-960.webp",
+    description:
+      "La plongée la plus profonde jamais documentée révèle des espèces inconnues et remet en question notre compréhension des origines de la vie.",
+    progress: 20,
+  },
+  {
+    id: 5,
+    title: "Samarkand, Cœur du Monde",
+    category: "Voyage",
+    durationMinutes: 46,
+    releaseYear: 2024,
+    views: 97_200,
+    thumbnailPath: "media/images/videos/samarkand-960.webp",
+    description:
+      "Aux carrefours des anciennes routes de la soie, Samarkand révèle ses trésors architecturaux et la mémoire vivante d'une civilisation millénaire.",
+    badge: "Nouveau",
+  },
+  {
+    id: 6,
+    title: "Les Inégalités du Siècle",
+    category: "Société",
+    durationMinutes: 94,
+    releaseYear: 2023,
+    views: 165_800,
+    thumbnailPath: "media/images/videos/the-inequalities-of-the-century-960.webp",
+    description:
+      "Dans dix villes du monde entier, une investigation sur les nouvelles fractures sociales qui redessinent le visage des métropoles contemporaines.",
+  },
+  {
+    id: 7,
+    title: "Cosmos Invisible",
+    category: "Science",
+    durationMinutes: 78,
+    releaseYear: 2024,
+    views: 341_200,
+    thumbnailPath: "media/images/videos/invisible-cosmos-960.webp",
+    description:
+      "Des astrophysiciens explorent les mystères de la matière noire et de l'énergie sombre, ces forces invisibles qui gouvernent l'expansion de l'univers.",
+    badge: "Tendance",
+  },
+  {
+    id: 8,
+    title: "Architectures du Sacré",
+    category: "Culture",
+    durationMinutes: 54,
+    releaseYear: 2023,
+    views: 142_500,
+    thumbnailPath: "media/images/videos/architectures-of-the-sacred-960.webp",
+    description:
+      "Des cathédrales gothiques aux temples bouddhistes, une exploration de l'architecture religieuse comme langage universel du transcendant.",
+  },
+  {
+    id: 9,
+    title: "Le Dernier Paysan",
+    category: "Société",
+    durationMinutes: 62,
+    releaseYear: 2022,
+    views: 78_900,
+    thumbnailPath: "media/images/videos/the-last-peasant-960.webp",
+    description:
+      "Portrait de trois agriculteurs en résistance face à l'agriculture industrielle. Un récit intime sur la transmission, la terre et l'identité paysanne.",
+  },
+  {
+    id: 10,
+    title: "Antarctique, Terre de Glace",
+    category: "Nature",
+    durationMinutes: 76,
+    releaseYear: 2024,
+    views: 193_400,
+    thumbnailPath: "media/images/videos/antarctica-land-of-ice-960.webp",
+    description:
+      "Une expédition scientifique au cœur du continent glacé documente les transformations inédites causées par le réchauffement climatique.",
+    badge: "Nouveau",
+  },
+  {
+    id: 11,
+    title: "La Route de la Soie",
+    category: "Voyage",
+    durationMinutes: 125,
+    releaseYear: 2023,
+    views: 127_300,
+    thumbnailPath: "media/images/videos/the-silk-road-960.webp",
+    description:
+      "De Xi'an à Istanbul, un voyage de 12 000 kilomètres sur les traces des marchands et explorateurs qui ont forgé les échanges entre Orient et Occident.",
+  },
+  {
+    id: 12,
+    title: "Biochimie du Vivant",
+    category: "Science",
+    durationMinutes: 52,
+    releaseYear: 2023,
+    views: 89_600,
+    thumbnailPath: "media/images/videos/biochemistry-of-the-living-960.webp",
+    description:
+      "Plongée dans l'invisible : comment les molécules qui composent nos cellules orchestrent l'extraordinaire complexité de la vie.",
+  },
+];
