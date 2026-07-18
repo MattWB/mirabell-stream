@@ -1,0 +1,140 @@
+:root {
+  color-scheme: dark;
+
+  --background: #0b0b0e;
+  --foreground: #eceae3;
+
+  --card: #141418;
+  --card-foreground: #eceae3;
+
+  --popover: #141418;
+  --popover-foreground: #eceae3;
+
+  --primary: #d4a847;
+  --primary-foreground: #0b0b0e;
+
+  --secondary: #1d1d22;
+  --secondary-foreground: #eceae3;
+
+  --muted: #222228;
+  --muted-foreground: #88878f;
+
+  --accent: #d4a847;
+  --accent-foreground: #0b0b0e;
+
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+
+  --border: rgb(255 255 255 / 8%);
+  --input: rgb(255 255 255 / 8%);
+  --input-background: rgb(255 255 255 / 5%);
+  --switch-background: #3a3a44;
+  --ring: #d4a847;
+
+  --chart-1: #d4a847;
+  --chart-2: #8b9dc3;
+  --chart-3: #6bae8e;
+  --chart-4: #c08070;
+  --chart-5: #9b8bc8;
+
+  --sidebar: #0f0f12;
+  --sidebar-foreground: #eceae3;
+  --sidebar-primary: #d4a847;
+  --sidebar-primary-foreground: #0f0f12;
+  --sidebar-accent: #1d1d22;
+  --sidebar-accent-foreground: #eceae3;
+  --sidebar-border: rgb(255 255 255 / 6%);
+  --sidebar-ring: #d4a847;
+}
+
+@theme inline {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.1875rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.4375rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    min-width: 320px;
+    background-color: var(--background);
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
