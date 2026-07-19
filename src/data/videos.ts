@@ -10,6 +10,7 @@ export const videos: Video[] = [
     views: 284_700,
     thumbnailPath: "media/images/videos/amazon-guardians-960.webp",
     backdropPath: "media/images/hero/amazon-guardians-hero.webp",
+    previewPath: "media/videos/amazon-guardians.mp4",
     description:
       "À l'intérieur de la plus grande forêt tropicale du monde, des communautés autochtones mènent un combat silencieux pour préserver leur territoire et notre avenir commun.",
     badge: "Nouveau",
@@ -25,6 +26,7 @@ export const videos: Video[] = [
     releaseYear: 2024,
     views: 412_300,
     thumbnailPath: "media/images/videos/ia-new-world-960.webp",
+    previewPath: "media/videos/ia-new-world.mp4",
     description:
       "Comment l'intelligence artificielle remodèle-t-elle nos sociétés, nos économies et notre rapport au travail ? Une enquête immersive au cœur de la révolution algorithmique.",
     badge: "Tendance",
@@ -37,6 +39,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 189_400,
     thumbnailPath: "media/images/videos/marble-memory-960.webp",
+    previewPath: "media/videos/marble-memory.mp4",
     description:
       "Un voyage entre les grandes capitales européennes à la rencontre des sculptures qui ont façonné notre imaginaire culturel depuis l'Antiquité.",
     progress: 78,
@@ -49,6 +52,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 231_600,
     thumbnailPath: "media/images/videos/deep-abyss-960.webp",
+    previewPath: "media/videos/deep-abyss.mp4",
     description:
       "La plongée la plus profonde jamais documentée révèle des espèces inconnues et remet en question notre compréhension des origines de la vie.",
     progress: 20,
@@ -61,6 +65,7 @@ export const videos: Video[] = [
     releaseYear: 2024,
     views: 97_200,
     thumbnailPath: "media/images/videos/samarkand-960.webp",
+    previewPath: "media/videos/samarkand.mp4",
     description:
       "Aux carrefours des anciennes routes de la soie, Samarkand révèle ses trésors architecturaux et la mémoire vivante d'une civilisation millénaire.",
     badge: "Nouveau",
@@ -73,6 +78,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 165_800,
     thumbnailPath: "media/images/videos/the-inequalities-of-the-century-960.webp",
+    previewPath: "media/videos/the-inequalities-of-the-century.mp4",
     description:
       "Dans dix villes du monde entier, une investigation sur les nouvelles fractures sociales qui redessinent le visage des métropoles contemporaines.",
   },
@@ -84,6 +90,7 @@ export const videos: Video[] = [
     releaseYear: 2024,
     views: 341_200,
     thumbnailPath: "media/images/videos/invisible-cosmos-960.webp",
+    previewPath: "media/videos/invisible-cosmos.mp4",
     description:
       "Des astrophysiciens explorent les mystères de la matière noire et de l'énergie sombre, ces forces invisibles qui gouvernent l'expansion de l'univers.",
     badge: "Tendance",
@@ -96,6 +103,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 142_500,
     thumbnailPath: "media/images/videos/architectures-of-the-sacred-960.webp",
+    previewPath: "media/videos/architectures-of-the-sacred.mp4",
     description:
       "Des cathédrales gothiques aux temples bouddhistes, une exploration de l'architecture religieuse comme langage universel du transcendant.",
   },
@@ -107,6 +115,7 @@ export const videos: Video[] = [
     releaseYear: 2022,
     views: 78_900,
     thumbnailPath: "media/images/videos/the-last-peasant-960.webp",
+    previewPath: "media/videos/the-last-peasant.mp4",
     description:
       "Portrait de trois agriculteurs en résistance face à l'agriculture industrielle. Un récit intime sur la transmission, la terre et l'identité paysanne.",
   },
@@ -118,6 +127,7 @@ export const videos: Video[] = [
     releaseYear: 2024,
     views: 193_400,
     thumbnailPath: "media/images/videos/antarctica-land-of-ice-960.webp",
+    previewPath: "media/videos/antarctica-land-of-ice.mp4",
     description:
       "Une expédition scientifique au cœur du continent glacé documente les transformations inédites causées par le réchauffement climatique.",
     badge: "Nouveau",
@@ -130,6 +140,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 127_300,
     thumbnailPath: "media/images/videos/the-silk-road-960.webp",
+    previewPath: "media/videos/the-silk-road.mp4",
     description:
       "De Xi'an à Istanbul, un voyage de 12 000 kilomètres sur les traces des marchands et explorateurs qui ont forgé les échanges entre Orient et Occident.",
   },
@@ -141,6 +152,7 @@ export const videos: Video[] = [
     releaseYear: 2023,
     views: 89_600,
     thumbnailPath: "media/images/videos/biochemistry-of-the-living-960.webp",
+    previewPath: "media/videos/biochemistry-of-the-living.mp4",
     description:
       "Plongée dans l'invisible : comment les molécules qui composent nos cellules orchestrent l'extraordinaire complexité de la vie.",
   },

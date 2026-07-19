@@ -11,6 +11,7 @@ export type Video = {
   views: number;
   thumbnailPath: string;
   backdropPath?: string;
+  previewPath: string;
   description: string;
   badge?: VideoBadge;
   progress?: number;
