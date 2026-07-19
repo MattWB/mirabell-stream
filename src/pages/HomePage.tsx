@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Clock, Flame, Star } from "lucide-react";
+import { usePlaybackEntries } from "../hooks/usePlaybackEntries";
 
 import { FeaturedHero } from "../components/streaming/FeaturedHero";
 import { VideoPreviewDialog } from "../components/streaming/VideoPreviewDialog";
+import { VideoRow } from "../components/streaming/VideoRow";
 import { videos } from "../data/videos";
 import type { Video } from "../types/video";
 
@@ -15,7 +18,19 @@ type DialogState = {
 export function HomePage() {
   const [dialogState, setDialogState] = useState<DialogState | null>(null);
 
+  const playbackEntries = usePlaybackEntries();
+
   const featuredVideo = videos.find((video) => video.featured);
+
+  const continueWatching = videos.filter(
+    (video) => video.progress !== undefined || playbackEntries[String(video.id)] !== undefined,
+  );
+
+  const trendingVideos = videos
+    .filter((video) => video.badge === "Tendance" || video.views > 200_000)
+    .slice(0, 4);
+
+  const newVideos = videos.filter((video) => video.badge === "Nouveau").slice(0, 4);
 
   if (!featuredVideo) {
     return (
@@ -29,6 +44,10 @@ export function HomePage() {
     setDialogState({ video, initialView });
   }
 
+  function openVideoDetails(video: Video) {
+    openDialog(video, "details");
+  }
+
   return (
     <main id="main-content">
       <FeaturedHero
@@ -36,6 +55,36 @@ export function HomePage() {
         onPreview={() => openDialog(featuredVideo, "player")}
         onShowDetails={() => openDialog(featuredVideo, "details")}
       />
+
+      <div className="mx-auto max-w-[1400px] px-4 pb-20 md:px-8 lg:px-12">
+        <VideoRow
+          id="continue-watching"
+          title="Continuer à regarder"
+          videos={continueWatching}
+          icon={<Clock className="size-4 text-accent" aria-hidden="true" />}
+          onVideoSelect={openVideoDetails}
+        />
+
+        <div className="border-t border-border" />
+
+        <VideoRow
+          id="trending"
+          title="Tendances du moment"
+          videos={trendingVideos}
+          icon={<Flame className="size-4 text-accent" aria-hidden="true" />}
+          onVideoSelect={openVideoDetails}
+        />
+
+        <div className="border-t border-border" />
+
+        <VideoRow
+          id="new-releases"
+          title="Nouveautés"
+          videos={newVideos}
+          icon={<Star className="size-4 text-accent" aria-hidden="true" />}
+          onVideoSelect={openVideoDetails}
+        />
+      </div>
 
       {dialogState && (
         <VideoPreviewDialog

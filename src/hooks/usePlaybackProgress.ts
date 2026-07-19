@@ -24,7 +24,7 @@ export function usePlaybackProgress(videoId: number) {
         return;
       }
 
-      savePlaybackPosition(videoId, currentTime);
+      savePlaybackPosition(videoId, currentTime, duration);
     },
     [videoId],
   );
