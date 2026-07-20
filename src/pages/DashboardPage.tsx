@@ -1,9 +1,19 @@
 import { Check, Clock, Eye, Users, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 
-import { audienceData, categoryDistribution, dashboardMetrics } from "../data/analytics";
+import {
+  audienceData,
+  categoryDistribution,
+  dashboardMetrics,
+  recentActivity,
+  topContentMetrics,
+} from "../data/analytics";
 import { AudienceChart } from "../components/admin/AudienceChart";
 import { CategoryDistributionChart } from "../components/admin/CategoryDistributionChart";
+
+import { RecentActivityList } from "../components/admin/RecentActivityList";
+import { TopContentTable } from "../components/admin/TopContentTable";
+import { videos } from "../data/videos";
 
 import { MetricCard } from "../components/admin/MetricCard";
 
@@ -71,6 +81,16 @@ export function DashboardPage() {
 
           <div className="min-w-0">
             <CategoryDistributionChart data={categoryDistribution} />
+          </div>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
+          <div className="min-w-0 lg:col-span-2">
+            <TopContentTable metrics={topContentMetrics} videos={videos} />
+          </div>
+
+          <div className="min-w-0">
+            <RecentActivityList activities={recentActivity} />
           </div>
         </div>
       </section>
