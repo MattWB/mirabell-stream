@@ -1,8 +1,11 @@
 import { Check, Clock, Eye, Users, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 
+import { audienceData, categoryDistribution, dashboardMetrics } from "../data/analytics";
+import { AudienceChart } from "../components/admin/AudienceChart";
+import { CategoryDistributionChart } from "../components/admin/CategoryDistributionChart";
+
 import { MetricCard } from "../components/admin/MetricCard";
-import { dashboardMetrics } from "../data/analytics";
 
 const dashboardDateFormatter = new Intl.DateTimeFormat("fr-FR", {
   day: "numeric",
@@ -59,6 +62,16 @@ export function DashboardPage() {
 
             return <MetricCard key={metric.id} metric={metric} icon={Icon} />;
           })}
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-5">
+          <div className="min-w-0 lg:col-span-2">
+            <AudienceChart data={audienceData} />
+          </div>
+
+          <div className="min-w-0">
+            <CategoryDistributionChart data={categoryDistribution} />
+          </div>
         </div>
       </section>
     </main>
