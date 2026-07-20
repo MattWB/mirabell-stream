@@ -6,6 +6,7 @@ import { FeaturedHero } from "../components/streaming/FeaturedHero";
 import { VideoPreviewDialog } from "../components/streaming/VideoPreviewDialog";
 import { VideoRow } from "../components/streaming/VideoRow";
 import { videos } from "../data/videos";
+import { CategoryGrid } from "../components/streaming/CategoryGrid";
 import type { Video } from "../types/video";
 
 type DialogView = "details" | "player";
@@ -84,6 +85,10 @@ export function HomePage() {
           icon={<Star className="size-4 text-accent" aria-hidden="true" />}
           onVideoSelect={openVideoDetails}
         />
+
+        <div className="border-t border-border" />
+
+        <CategoryGrid />
       </div>
 
       {dialogState && (
