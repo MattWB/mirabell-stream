@@ -1,4 +1,3 @@
-import { cva } from "class-variance-authority";
 import { Play } from "lucide-react";
 
 import type { Video } from "../../types/video";
@@ -6,18 +5,6 @@ import { cn } from "../../utils/cn";
 import { formatDuration } from "../../utils/formatters";
 import { getPublicAssetUrl } from "../../utils/getPublicAssetUrl";
 import { usePlaybackEntries } from "../../hooks/usePlaybackEntries";
-
-const videoCardVariants = cva("group block text-left text-foreground", {
-  variants: {
-    layout: {
-      carousel: "w-[min(240px,72vw)] shrink-0 md:w-auto",
-      grid: "w-full",
-    },
-  },
-  defaultVariants: {
-    layout: "grid",
-  },
-});
 
 type VideoCardProps = {
   video: Video;
@@ -51,7 +38,10 @@ export function VideoCard({
 
   return (
     <button
-      className={cn(videoCardVariants({ layout }))}
+      className={cn(
+        "group block text-left text-foreground",
+        layout === "carousel" ? "w-[min(240px,72vw)] shrink-0 md:w-auto" : "w-full",
+      )}
       type="button"
       onClick={() => onSelect(video)}
       aria-label={`Ouvrir la fiche de ${video.title}`}
