@@ -78,7 +78,7 @@ export function FeaturedHero({ video, onPreview, onShowDetails }: FeaturedHeroPr
 
         <div className="mt-7 flex flex-wrap gap-3">
           <button
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             type="button"
             onClick={onPreview}
             aria-label={`Voir l'extrait de ${video.title}`}
@@ -88,7 +88,7 @@ export function FeaturedHero({ video, onPreview, onShowDetails }: FeaturedHeroPr
           </button>
 
           <button
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 px-5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 px-5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             type="button"
             onClick={onShowDetails}
           >

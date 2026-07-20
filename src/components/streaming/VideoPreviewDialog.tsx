@@ -169,7 +169,7 @@ export function VideoPreviewDialog({
       >
         <button
           ref={closeButtonRef}
-          className="absolute top-3 right-3 z-20 flex size-10 items-center justify-center rounded-md bg-black/65 text-white transition-colors hover:bg-black/85"
+          className="absolute top-3 right-3 z-20 flex size-10 items-center justify-center rounded-md bg-black/65 text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black hover:bg-black/85"
           type="button"
           onClick={handleClose}
           aria-label="Fermer"
@@ -220,7 +220,7 @@ export function VideoPreviewDialog({
 
               <div className="mt-5 flex flex-wrap gap-3">
                 <button
-                  className="inline-flex h-10 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-muted-foreground transition-colors hover:border-white/20 hover:text-foreground"
+                  className="inline-flex h-10 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-white/20 hover:text-foreground"
                   type="button"
                   onClick={showDetails}
                 >
@@ -229,7 +229,7 @@ export function VideoPreviewDialog({
                 </button>
 
                 <button
-                  className="inline-flex h-10 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-muted-foreground transition-colors hover:border-white/20 hover:text-foreground"
+                  className="inline-flex h-10 items-center gap-2 rounded-md border border-border px-4 text-sm font-medium text-muted-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-white/20 hover:text-foreground"
                   type="button"
                   onClick={restartPreview}
                 >
@@ -298,7 +298,7 @@ export function VideoPreviewDialog({
 
               <div className="mt-6">
                 <button
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-accent px-5 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   type="button"
                   onClick={showPlayer}
                   aria-label={`Voir l’extrait de ${video.title}`}

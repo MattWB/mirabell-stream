@@ -14,6 +14,10 @@ type VideoRowProps = {
 };
 
 export function VideoRow({ id, title, videos, icon, onVideoSelect }: VideoRowProps) {
+  if (videos.length === 0) {
+    return null;
+  }
+
   const titleId = `${id}-title`;
 
   return (

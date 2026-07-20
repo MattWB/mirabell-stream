@@ -43,7 +43,11 @@ export function CatalogFilters() {
   const [searchParams] = useSearchParams();
 
   const currentQuery = searchParams.get("q") ?? "";
-  const activeCategory = searchParams.get("category");
+  const requestedCategory = searchParams.get("category");
+
+  const activeCategory = categories.some(({ name }) => name === requestedCategory)
+    ? requestedCategory
+    : null;
 
   function createCategoryUrl(category?: string) {
     const nextSearchParams = new URLSearchParams(searchParams);
@@ -68,13 +72,13 @@ export function CatalogFilters() {
           Filtrer par catégorie
         </p>
 
-        <div
+        <nav
           className="scrollbar-hide flex gap-2 overflow-x-auto pb-2"
           aria-label="Catégories du catalogue"
         >
           <Link
             className={cn(
-              "shrink-0 rounded-md border px-4 py-2 text-sm font-medium transition-colors",
+              "shrink-0 rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
               activeCategory === null
                 ? "border-accent bg-accent text-accent-foreground"
                 : "border-border bg-card text-muted-foreground hover:border-accent/50 hover:text-foreground",
@@ -97,13 +101,13 @@ export function CatalogFilters() {
                     : "border-border bg-card text-muted-foreground hover:border-accent/50 hover:text-foreground",
                 )}
                 to={createCategoryUrl(name)}
-                aria-current={isActive ? "page" : undefined}
+                aria-current={activeCategory === null ? "page" : undefined}
               >
                 {name}
               </Link>
             );
           })}
-        </div>
+        </nav>
       </div>
     </div>
   );

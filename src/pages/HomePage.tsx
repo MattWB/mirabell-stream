@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Clock, Flame, Star } from "lucide-react";
 import { usePlaybackEntries } from "../hooks/usePlaybackEntries";
 
@@ -33,6 +33,27 @@ export function HomePage() {
 
   const newVideos = videos.filter((video) => video.badge === "Nouveau").slice(0, 4);
 
+  const visibleRows = [
+    {
+      id: "continue-watching",
+      title: "Continuer à regarder",
+      videos: continueWatching,
+      icon: <Clock className="size-4 text-accent" aria-hidden="true" />,
+    },
+    {
+      id: "trending",
+      title: "Tendances du moment",
+      videos: trendingVideos,
+      icon: <Flame className="size-4 text-accent" aria-hidden="true" />,
+    },
+    {
+      id: "new-releases",
+      title: "Nouveautés",
+      videos: newVideos,
+      icon: <Star className="size-4 text-accent" aria-hidden="true" />,
+    },
+  ].filter(({ videos }) => videos.length > 0);
+
   if (!featuredVideo) {
     return (
       <main id="main-content" className="grid min-h-screen place-items-center px-4 pt-16">
@@ -58,35 +79,21 @@ export function HomePage() {
       />
 
       <div className="mx-auto max-w-[1400px] px-4 pb-20 md:px-8 lg:px-12">
-        <VideoRow
-          id="continue-watching"
-          title="Continuer à regarder"
-          videos={continueWatching}
-          icon={<Clock className="size-4 text-accent" aria-hidden="true" />}
-          onVideoSelect={openVideoDetails}
-        />
+        {visibleRows.map((row, index) => (
+          <Fragment key={row.id}>
+            {index > 0 && <div className="border-t border-border" />}
 
-        <div className="border-t border-border" />
+            <VideoRow
+              id={row.id}
+              title={row.title}
+              videos={row.videos}
+              icon={row.icon}
+              onVideoSelect={openVideoDetails}
+            />
+          </Fragment>
+        ))}
 
-        <VideoRow
-          id="trending"
-          title="Tendances du moment"
-          videos={trendingVideos}
-          icon={<Flame className="size-4 text-accent" aria-hidden="true" />}
-          onVideoSelect={openVideoDetails}
-        />
-
-        <div className="border-t border-border" />
-
-        <VideoRow
-          id="new-releases"
-          title="Nouveautés"
-          videos={newVideos}
-          icon={<Star className="size-4 text-accent" aria-hidden="true" />}
-          onVideoSelect={openVideoDetails}
-        />
-
-        <div className="border-t border-border" />
+        {visibleRows.length > 0 && <div className="border-t border-border" />}
 
         <CategoryGrid />
       </div>
