@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router";
 
-import { AdminLayout } from "../layouts/AdminLayout";
 import { PublicLayout } from "../layouts/PublicLayout";
 import { CatalogPage } from "../pages/CatalogPage";
-import { DashboardPage } from "../pages/DashboardPage";
 import { HomePage } from "../pages/HomePage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 
@@ -24,11 +22,23 @@ export const router = createBrowserRouter(
     },
     {
       path: "dashboard",
-      element: <AdminLayout />,
+      lazy: async () => {
+        const { AdminLayout } = await import("../layouts/AdminLayout");
+
+        return {
+          Component: AdminLayout,
+        };
+      },
       children: [
         {
           index: true,
-          element: <DashboardPage />,
+          lazy: async () => {
+            const { DashboardPage } = await import("../pages/DashboardPage");
+
+            return {
+              Component: DashboardPage,
+            };
+          },
         },
       ],
     },
