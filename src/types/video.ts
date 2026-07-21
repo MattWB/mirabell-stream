@@ -1,6 +1,6 @@
 export type VideoCategory = "Culture" | "Société" | "Science" | "Nature" | "Voyage" | "Technologie";
 
-export type VideoBadge = "Nouveau" | "Tendance";
+type VideoBadge = "Nouveau" | "Tendance";
 
 export type Video = {
   id: number;

@@ -1,13 +1,13 @@
 import type { VideoCategory } from "./video";
 
-export type TrendDirection = "up" | "down";
+type TrendDirection = "up" | "down";
 
 export type ContentStatus = "active" | "scheduled" | "inactive";
 
 export type ActivityKind =
   "publication" | "audience-peak" | "maintenance" | "removal" | "editorial-suggestion";
 
-export type DashboardMetricUnit = "count" | "minutes" | "percentage";
+type DashboardMetricUnit = "count" | "minutes" | "percentage";
 
 export type DashboardMetric = {
   id: string;
