@@ -15,11 +15,11 @@ const activityConfiguration: Record<
 > = {
   publication: {
     icon: Film,
-    className: "bg-amber-50 text-amber-600",
+    className: "bg-amber-50 text-amber-700",
   },
   "audience-peak": {
     icon: TrendingUp,
-    className: "bg-emerald-50 text-emerald-600",
+    className: "bg-emerald-50 text-emerald-700",
   },
   maintenance: {
     icon: Bell,
@@ -27,7 +27,7 @@ const activityConfiguration: Record<
   },
   removal: {
     icon: X,
-    className: "bg-red-50 text-red-500",
+    className: "bg-red-50 text-red-600",
   },
   "editorial-suggestion": {
     icon: Star,
@@ -66,7 +66,7 @@ export function RecentActivityList({ activities }: RecentActivityListProps) {
               <div className="min-w-0">
                 <p className="text-xs leading-relaxed text-stone-600">{activity.message}</p>
 
-                <p className="mt-1 font-mono text-[10px] text-stone-400">{activity.timeLabel}</p>
+                <p className="mt-1 font-mono text-[10px] text-stone-500">{activity.timeLabel}</p>
               </div>
             </li>
           );

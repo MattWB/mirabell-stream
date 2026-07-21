@@ -31,7 +31,7 @@ export function MetricCard({ metric, icon: Icon }: MetricCardProps) {
           {metric.label}
         </h2>
 
-        <span className="grid size-8 shrink-0 place-items-center rounded-md bg-amber-50 text-amber-600">
+        <span className="grid size-8 shrink-0 place-items-center rounded-md bg-amber-50 text-amber-700">
           <Icon className="size-4" aria-hidden="true" />
         </span>
       </div>
@@ -44,8 +44,8 @@ export function MetricCard({ metric, icon: Icon }: MetricCardProps) {
         <p
           className={
             isIncreasing
-              ? "flex shrink-0 items-center gap-0.5 font-mono text-xs font-medium text-emerald-600"
-              : "flex shrink-0 items-center gap-0.5 font-mono text-xs font-medium text-red-500"
+              ? "flex shrink-0 items-center gap-0.5 font-mono text-xs font-medium text-emerald-700"
+              : "flex shrink-0 items-center gap-0.5 font-mono text-xs font-medium text-red-600"
           }
         >
           <TrendIcon className="size-3.5" aria-hidden="true" />
@@ -54,7 +54,7 @@ export function MetricCard({ metric, icon: Icon }: MetricCardProps) {
         </p>
       </div>
 
-      <p className="mt-2 font-mono text-[10px] text-stone-400">
+      <p className="mt-2 font-mono text-[10px] text-stone-500">
         par rapport à la semaine précédente
       </p>
     </article>

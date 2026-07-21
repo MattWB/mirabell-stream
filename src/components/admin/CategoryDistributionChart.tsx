@@ -20,7 +20,7 @@ export function CategoryDistributionChart({ data }: CategoryDistributionChartPro
           Par catégorie
         </h2>
 
-        <p className="mt-1 font-mono text-[10px] text-stone-400">Part des vues totales</p>
+        <p className="mt-1 font-mono text-[10px] text-stone-500">Part des vues totales</p>
       </header>
 
       <div className="h-60 min-w-0">
@@ -49,7 +49,7 @@ export function CategoryDistributionChart({ data }: CategoryDistributionChartPro
               tickLine={false}
               tickFormatter={(value: number) => `${value} %`}
               tick={{
-                fill: "#a8a29e",
+                fill: "#78716c",
                 fontFamily: "DM Mono, monospace",
                 fontSize: 9,
               }}

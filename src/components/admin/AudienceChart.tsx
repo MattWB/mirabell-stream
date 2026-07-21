@@ -32,7 +32,7 @@ export function AudienceChart({ data }: AudienceChartProps) {
             Évolution de l'audience
           </h2>
 
-          <p className="mt-1 font-mono text-[10px] text-stone-400">7 derniers jours</p>
+          <p className="mt-1 font-mono text-[10px] text-stone-500">7 derniers jours</p>
         </div>
       </header>
 
@@ -59,7 +59,7 @@ export function AudienceChart({ data }: AudienceChartProps) {
               axisLine={false}
               tickLine={false}
               tick={{
-                fill: "#a8a29e",
+                fill: "#78716c",
                 fontFamily: "DM Mono, monospace",
                 fontSize: 10,
               }}
@@ -70,7 +70,7 @@ export function AudienceChart({ data }: AudienceChartProps) {
               tickLine={false}
               tickFormatter={formatCompactNumber}
               tick={{
-                fill: "#a8a29e",
+                fill: "#78716c",
                 fontFamily: "DM Mono, monospace",
                 fontSize: 10,
               }}
@@ -125,12 +125,12 @@ export function AudienceChart({ data }: AudienceChartProps) {
               type="monotone"
               dataKey="uniqueUsers"
               name="Utilisateurs uniques"
-              stroke="var(--chart-2)"
+              stroke="var(--admin-chart-2)"
               strokeWidth={2.5}
               dot={false}
               activeDot={{
                 r: 4,
-                fill: "var(--chart-2)",
+                fill: "var(--admin-chart-2)",
                 stroke: "#ffffff",
                 strokeWidth: 2,
               }}

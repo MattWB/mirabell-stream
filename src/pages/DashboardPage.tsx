@@ -47,14 +47,14 @@ export function DashboardPage() {
               Vue d'ensemble
             </h1>
 
-            <p className="mt-1 text-sm text-stone-500">Activité des 7 derniers jours</p>
+            <p className="mt-1 text-sm text-stone-600">Activité des 7 derniers jours</p>
           </div>
 
           <div className="hidden text-right sm:block">
-            <p className="font-mono text-[10px] text-stone-400">Page actualisée</p>
+            <p className="font-mono text-[10px] text-stone-600">Page actualisée</p>
 
             <time
-              className="mt-1 block font-mono text-xs font-medium text-stone-600"
+              className="mt-1 block font-mono text-xs font-medium text-stone-700"
               dateTime={refreshedAt.toISOString()}
             >
               {dashboardDateFormatter.format(refreshedAt)}

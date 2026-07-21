@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @import "./styles/theme.css";
+
+html {
+  scroll-padding-top: 5rem;
+}

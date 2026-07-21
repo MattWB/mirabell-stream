@@ -46,34 +46,34 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
       <header className="flex items-center justify-between gap-3 border-b border-stone-100 px-4 py-4 md:px-5">
         <h2
           id="top-content-title"
-          className="font-display text-sm font-bold uppercase tracking-wide text-stone-700"
+          className="font-display text-sm font-bold uppercase tracking-wide text-stone-800"
         >
           Contenus les plus regardés
         </h2>
 
-        <span className="shrink-0 font-mono text-[10px] text-stone-400">7 derniers jours</span>
+        <span className="shrink-0 font-mono text-[10px] text-stone-500">7 derniers jours</span>
       </header>
 
       <div className="hidden overflow-x-auto md:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-stone-100">
-              <th className="px-5 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-5 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Titre
               </th>
-              <th className="px-3 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-3 py-3 text-left font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Catégorie
               </th>
-              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Vues
               </th>
-              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Complétion
               </th>
-              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-3 py-3 text-right font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Tendance
               </th>
-              <th className="px-5 py-3 text-center font-mono text-[10px] font-medium uppercase tracking-wider text-stone-400">
+              <th className="px-5 py-3 text-center font-mono text-[10px] font-medium uppercase tracking-wider text-stone-500">
                 Statut
               </th>
             </tr>
@@ -97,7 +97,7 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
                   </td>
 
                   <td className="px-3 py-3.5">
-                    <span className="rounded-sm bg-stone-100 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-stone-500">
+                    <span className="rounded-sm bg-stone-100 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-stone-600">
                       {video.category}
                     </span>
                   </td>
@@ -124,7 +124,7 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
                         />
                       </div>
 
-                      <span className="w-8 text-right font-mono text-xs text-stone-500">
+                      <span className="w-8 text-right font-mono text-xs text-stone-600">
                         {metric.completionRate} %
                       </span>
                     </div>
@@ -134,7 +134,7 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
                     <span
                       className={cn(
                         "flex items-center justify-end gap-0.5 font-mono text-xs font-medium",
-                        isIncreasing ? "text-emerald-600" : "text-red-500",
+                        isIncreasing ? "text-emerald-700" : "text-red-600",
                       )}
                     >
                       <TrendIcon className="size-3.5" aria-hidden="true" />
@@ -172,7 +172,7 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
               <div className="min-w-0 flex-1">
                 <h3 className="truncate text-sm font-medium text-stone-800">{video.title}</h3>
 
-                <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-stone-400">
+                <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-stone-500">
                   <span className="uppercase">{video.category}</span>
                   <span aria-hidden="true">·</span>
                   <span>{metric.views.toLocaleString("fr-FR")} vues</span>
@@ -184,7 +184,7 @@ export function TopContentTable({ metrics, videos }: TopContentTableProps) {
               <span
                 className={cn(
                   "flex shrink-0 items-center gap-0.5 font-mono text-xs font-medium",
-                  isIncreasing ? "text-emerald-600" : "text-red-500",
+                  isIncreasing ? "text-emerald-700" : "text-red-600",
                 )}
               >
                 <TrendIcon className="size-3.5" aria-hidden="true" />

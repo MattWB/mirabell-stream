@@ -30,7 +30,7 @@ export function AdminNavigation({ className, onNavigate }: AdminNavigationProps)
   return (
     <div className={cn("flex flex-col", className)}>
       <nav className="flex-1 px-3 py-4" aria-label="Navigation du dashboard">
-        <p className="px-3 pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+        <p className="px-3 pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">
           Navigation
         </p>
 
@@ -86,7 +86,7 @@ export function AdminNavigation({ className, onNavigate }: AdminNavigationProps)
           <div className="min-w-0">
             <p className="truncate text-xs font-medium text-white">Admin Mirabell</p>
 
-            <p className="truncate font-mono text-[10px] text-white/35">admin@mirabelltest.fr</p>
+            <p className="truncate font-mono text-[10px] text-white/45">admin@mirabelltest.fr</p>
           </div>
         </div>
       </div>
