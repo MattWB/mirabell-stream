@@ -1,5 +1,7 @@
 # Mirabell Stream
 
+**Démo en ligne :** https://www.matthieumorel.com/projets/mirabell-stream/
+
 Mirabell Stream est un prototype frontend de plateforme de streaming documentaire, réalisé dans le cadre d’un test technique. L’application rassemble deux espaces : une interface publique pour découvrir et regarder des contenus ainsi qu'un dashboard d’administration pour suivre l’activité de la plateforme.
 
 L’idée n’était pas de donner l’illusion d’un produit déjà prêt pour la production mais de construire une première version crédible, agréable à parcourir et techniquement propre. J’ai donc porté une attention particulière au responsive, à l’accessibilité, aux performances et à la clarté du code.
