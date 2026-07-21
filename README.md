@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Mirabell Stream
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mirabell Stream est un prototype frontend de plateforme de streaming documentaire, réalisé dans le cadre d’un test technique. L’application rassemble deux espaces : une interface publique pour découvrir et regarder des contenus ainsi qu'un dashboard d’administration pour suivre l’activité de la plateforme.
 
-Currently, two official plugins are available:
+L’idée n’était pas de donner l’illusion d’un produit déjà prêt pour la production mais de construire une première version crédible, agréable à parcourir et techniquement propre. J’ai donc porté une attention particulière au responsive, à l’accessibilité, aux performances et à la clarté du code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Ce que propose l’application
 
-## React Compiler
+### Côté plateforme de streaming
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- une page d’accueil avec un contenu mis en avant et plusieurs sélections thématiques,
+- un catalogue avec recherche textuelle, filtres par catégorie et recherche synchronisée avec l’URL,
+- la lecture d’extraits vidéo dans une fenêtre modale,
+- la mémorisation locale de la progression et la reprise de lecture,
+- un indicateur de progression sur les contenus déjà consultés,
+- un thème clair pour le dashboard, un thème sombre pour la plateforme ainsi qu’une page 404 dédiée.
 
-## Expanding the ESLint configuration
+### Côté administration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- des indicateurs synthétiques sur l’activité de la plateforme,
+- une vue de l’évolution de l’audience et du temps de visionnage,
+- la répartition des consultations par catégorie,
+- un classement des contenus avec leurs statuts et leurs tendances,
+- un aperçu des activités récentes,
+- une présentation pensée aussi bien pour les écrans desktop que pour le mobile.
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## Choix techniques
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Le projet repose sur **React**, **TypeScript** et **Vite**. **React Router** gère la navigation, **Tailwind CSS** l’intégration, **Recharts** les graphiques et **Lucide React** les icônes. ESLint et Prettier complètent l’environnement de développement.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+Les contenus, catégories et données analytiques sont simulés localement. Ils restent toutefois typés et séparés des composants afin de conserver une structure proche de celle que pourrait utiliser une application connectée à une API.
+
+Le dashboard est chargé à la demande grâce aux routes différées de React Router. Recharts et les composants analytiques ne viennent donc pas alourdir le chargement initial de la partie publique.
+
+## Quelques arbitrages
+
+- **Des médias locaux pour un rendu fiable.** Les images et vidéos sont intégrées au projet afin que l’application reste stable pendant l’évaluation, sans dépendre d’un service tiers. Les miniatures sont optimisées en WebP, les images non prioritaires sont chargées de manière différée et leurs dimensions sont déclarées.
+- **De vrais extraits plutôt que de fausses interactions.** Les durées affichées correspondent aux contenus fictifs complets mais chaque vidéo dispose d’un court extrait optimisé pour le web. Cela permet de proposer une expérience de lecture fonctionnelle sans transformer le dépôt en bibliothèque vidéo. L’interface précise clairement qu’il s’agit d’extraits de démonstration.
+- **Une reprise de lecture sans backend.** La progression est enregistrée dans `localStorage`. Ce choix suffit à rendre le parcours crédible dans le cadre d’un prototype frontend tout en évitant d’ajouter une infrastructure sans rapport direct avec l’exercice.
+- **Des statistiques simulées mais crédibles.** Le dashboard utilise un jeu de données statiques. La mention « Page actualisée » indique donc le moment où l’interface a été chargée et non une synchronisation avec un service distant.
+- **Une vraie adaptation mobile.** Les informations restent disponibles sur petit écran mais leur hiérarchie change. Le tableau de performances devient par exemple une série de cartes, plus simple à lire et à manipuler sur mobile.
+
+## Les principaux défis
+
+Le premier enjeu a été de faire cohabiter deux espaces assez différents : une plateforme éditoriale et un outil d’administration, tout en gardant une identité commune et une navigation cohérente.
+
+Le dashboard demandait aussi un travail particulier sur mobile : les graphiques et tableaux devaient rester lisibles sans simplement réduire leur version desktop. Les contrastes des séries, des tendances et des informations secondaires ont également été ajustés pour préserver à la fois l’identité visuelle et l’accessibilité.
+
+Recharts représente une part importante du JavaScript. Le chargement différé de la branche administrative permet de ne faire supporter ce coût qu’aux personnes qui ouvrent réellement le dashboard.
+
+## Qualité et validation
+
+Les parcours principaux ont été testés sur mobile, tablette et ordinateur. Une attention spécifique a été portée à la navigation au clavier, au focus visible, aux libellés accessibles et aux contrastes y compris dans les graphiques.
+
+- **100 % au score Lighthouse Accessibilité** sur les pages contrôlées ;
+- aucune erreur, aucun avertissement React et aucune requête en échec sur les parcours testés ;
+- validations ESLint, TypeScript, Prettier et Knip réussies ;
+- build de production généré sans erreur.
+
+## Ce que j’ajouterais ensuite
+
+Avec davantage de temps, la suite logique serait d’intégrer une authentification avec gestion des rôles, une API, une base de données et un véritable outil de gestion des contenus. La progression de lecture pourrait alors être associée au compte utilisateur et synchronisée entre plusieurs appareils.
+
+Le dashboard gagnerait également à être relié à une source analytique réelle, avec des états de chargement, d’erreur et de données obsolètes. Pour les médias, une pipeline automatisée pourrait générer plusieurs tailles et formats, accompagnés d’une stratégie de cache adaptée. Des tests automatisés viendraient ensuite compléter les validations manuelles réalisées sur ce prototype.
+
+## Lancer le projet
+
+### Prérequis
+
+- Node.js ;
+- npm.
+
+```bash
+git clone https://github.com/MattWB/mirabell-stream.git
+cd mirabell-stream
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Commandes disponibles
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run dev       # lance le serveur de développement
+npm run build     # vérifie les types et génère le build de production
+npm run preview   # prévisualise le build de production
+npm run lint      # analyse le code avec ESLint
+npm run format    # applique le formatage Prettier
 ```
