@@ -1,4 +1,5 @@
 import { categories } from "../../data/categories";
+import { videos } from "../../data/videos";
 import { CategoryCard } from "./CategoryCard";
 
 export function CategoryGrid() {
@@ -12,9 +13,19 @@ export function CategoryGrid() {
       </h2>
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-        {categories.map((category) => (
-          <CategoryCard key={category.name} category={category} />
-        ))}
+        {categories.map((category) => {
+          const contentCount = videos.filter((video) => video.category === category.name).length;
+
+          return (
+            <CategoryCard
+              key={category.name}
+              category={{
+                ...category,
+                contentCount,
+              }}
+            />
+          );
+        })}
       </div>
     </section>
   );

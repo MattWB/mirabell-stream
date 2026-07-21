@@ -19,8 +19,11 @@ export type Video = {
   featured?: boolean;
 };
 
-export type VideoCategorySummary = {
+export type VideoCategoryData = {
   name: VideoCategory;
   imagePath: string;
+};
+
+export type VideoCategorySummary = VideoCategoryData & {
   contentCount: number;
 };

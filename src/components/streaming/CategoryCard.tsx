@@ -21,6 +21,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
   const { name, imagePath, contentCount } = category;
   const Icon = categoryIcons[name];
   const search = new URLSearchParams({ category: name }).toString();
+  const contentCountLabel = `${contentCount} documentaire${contentCount === 1 ? "" : "s"}`;
 
   return (
     <Link
@@ -29,7 +30,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
         search,
       }}
       className="group relative aspect-4/3 overflow-hidden rounded-lg bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      aria-label={`Explorer la catégorie ${name}, ${contentCount} documentaires`}
+      aria-label={`Explorer la catégorie ${name}, ${contentCountLabel}`}
     >
       <img
         src={getPublicAssetUrl(imagePath)}
@@ -42,13 +43,13 @@ export function CategoryCard({ category }: CategoryCardProps) {
       <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/35 to-black/10 transition-colors duration-300 group-hover:from-black/80" />
 
       <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-4">
-        <Icon className="mb-2 size-4 xl:size-6 text-primary" aria-hidden="true" />
+        <Icon className="mb-2 size-4 text-primary xl:size-6" aria-hidden="true" />
 
-        <h3 className="font-display font-bold uppercase tracking-wide text-white text-base xl:text-xl">
+        <h3 className="font-display text-base font-bold uppercase tracking-wide text-white xl:text-xl">
           {name}
         </h3>
 
-        <p className="mt-1 text-xs text-white/65">{contentCount} documentaires</p>
+        <p className="mt-1 text-xs text-white/65">{contentCountLabel}</p>
       </div>
     </Link>
   );
