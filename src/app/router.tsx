@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router";
 
+import { AdminLoadingScreen } from "../components/admin/AdminLoadingScreen";
+
 import { PublicLayout } from "../layouts/PublicLayout";
 import { CatalogPage } from "../pages/CatalogPage";
 import { HomePage } from "../pages/HomePage";
@@ -22,6 +24,7 @@ export const router = createBrowserRouter(
     },
     {
       path: "dashboard",
+      hydrateFallbackElement: <AdminLoadingScreen />,
       lazy: async () => {
         const { AdminLayout } = await import("../layouts/AdminLayout");
 

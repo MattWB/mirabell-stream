@@ -55,8 +55,8 @@ Recharts représente une part importante du JavaScript. Le chargement différé 
 Les parcours principaux ont été testés sur mobile, tablette et ordinateur. Une attention spécifique a été portée à la navigation au clavier, au focus visible, aux libellés accessibles et aux contrastes y compris dans les graphiques.
 
 - **100 % au score Lighthouse Accessibilité** sur les pages contrôlées ;
-- aucune erreur, aucun avertissement React et aucune requête en échec sur les parcours testés ;
-- validations ESLint, TypeScript, Prettier et Knip réussies ;
+- aucune erreur et aucune requête en échec sur les parcours testés ;
+- validations ESLint, TypeScript, Prettier réussies ;
 - build de production généré sans erreur.
 
 ## Ce que j’ajouterais ensuite
@@ -69,7 +69,7 @@ Le dashboard gagnerait également à être relié à une source analytique réel
 
 ### Prérequis
 
-- Node.js ;
+- Node.js (20.19+ ou 22.12+);
 - npm.
 
 ```bash
